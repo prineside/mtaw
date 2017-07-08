@@ -1,0 +1,87 @@
+/*
+	x = 0.53, y = 0.4
+*/
+#crosshair {
+	position:fixed;
+	z-index:1000;
+	top:40%;
+	left:53%;
+	width:215px;
+	height:47px;
+	margin-left:-6px;
+	margin-top:-6px;
+	display:none;
+}
+#crosshair.enabled {
+	display:block;
+}
+#crosshair.hidden {
+	display:none;
+}
+#crosshair-pointer {
+	float:left;
+	width:13px;
+	height:13px;
+	background:url( ../img/crosshair.png );
+}
+#crosshair-label {
+	float:left;
+	width:200px;
+	height:35px;
+	color:#fff;
+	padding-top:12px;
+	padding-left:2px;
+	display:none;
+	text-shadow:0 1px 0 #000, 0 -1px 0 #000, 1px 0 0 #000, -1px 0 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000;
+}
+#crosshair-label-action-key {
+	float:left;
+	width:16px;
+	height:16px;
+	line-height:16px;
+	font-size:14px;
+	font-weight:bold;
+	color:#6af;
+	display:none;
+}
+#crosshair-label-action-key .action-key-rmb {
+	background:url(../img/rmb-icon.png) no-repeat;
+	width:16px;
+	height:16px;
+}
+#crosshair-label-action-key .action-key-lmb {
+	background:url(../img/lmb-icon.png) no-repeat;
+	width:16px;
+	height:16px;
+}
+#crosshair-label-text {
+	height:16px;
+	line-height:16px;
+	float:left;
+	position:relative;
+}
+#crosshair-label-text-main {
+	
+}
+#crosshair-label-text-progress-overlay {
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:2;
+	color:#0a0;
+	overflow:hidden;
+	white-space:nowrap;
+	width:30px;
+	display:none;
+}
+#crosshair-label-description {
+	clear:both;
+	font-size:12px;
+	opacity:0.8;
+}
+#crosshair-label.action-key-visible #crosshair-label-action-key {
+	display:block;
+}
+#crosshair-label.action-key-visible #crosshair-label-description {
+	margin-left:16px;
+}

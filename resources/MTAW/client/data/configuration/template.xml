@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+	bestPerformance в типе string при less значит, что самый последний элемент
+	в options дает больше всего производительности, а первый - меньше, и наоборот
+-->
+<configuration>
+	<graphics name="Графика">
+		<!-- CFG.graphics.farClipDistance + -->
+		<farClipDistance type="int" min="100" max="2000" default="400" bestPerformance="less" setting="true" needRestart="false">
+			<name>Дальность прорисовки</name>
+			<description>Любые объекты не будут видны, если находятся дальше указанного расстояния</description>
+		</farClipDistance>
+		
+		<!-- CFG.graphics.fogDistance + -->
+		<fogDistance type="int" min="10" max="2000" default="65" bestPerformance="equal" setting="true" needRestart="false">
+			<name>Дальность тумана</name>
+			<description>Расстояние, на котором начинается туман</description>
+		</fogDistance>
+		
+		<!-- CFG.graphics.herbDrawDistance + -->
+		<herbDrawDistance type="int" min="30" max="300" default="75" bestPerformance="less" setting="true" needRestart="false">
+			<name>Дальность отрисовки растений</name>
+			<description>Динамические растения (например, пшеница) не будут видны, если находятся дальше указанного расстояния</description>
+		</herbDrawDistance>
+		
+		<!-- CFG.graphics.guiScale + -->
+		<guiScale type="float" default="1" min="0.5" max="2" bestPerformance="equal" setting="true" needRestart="true">
+			<name>Масштаб графического интерфейса</name>
+			<description>Может быть полезно для слишком больших или слишком малых экранов. Рекомендуется установить стандартное значение (1.0), чтобы избежать размытия. Для применения изменений необходимо перезайти на сервер.</description>
+		</guiScale>
+		
+		<!-- CFG.graphics.vehicleVinylResolution + -->
+		<vehicleVinylResolution type="string" default="medium" bestPerformance="less" setting="true" needRestart="true">
+			<name>Размер текстур винилов машин</name>
+			<description>При большом размере потребляется больше видеопамяти и текстуры генерируются дольше при первой их загрузке, но выглядят более качественно</description>
+			<options>
+				<option value="high">Большой (2048x2048)</option>
+				<option value="medium">Средний (1024x1024)</option>
+				<option value="low">Малый (512x512)</option>
+				<option value="verylow">Очень малый (256x256)</option>
+			</options>
+		</vehicleVinylResolution>
+		
+	</graphics>
+	
+	<sound name="Звук">
+		<!-- CFG.sound.loginFormMusic + -->
+		<loginFormMusic type="bool" default="true" bestPerformance="equal" setting="false" needRestart="false">
+			<name>Музыка на экране входа</name>
+			<description>На экране при входе на сервер будет играть музыка</description>
+		</loginFormMusic>
+		
+	</sound>
+	
+	<gameplay name="Геймплей">
+		<!-- CFG.gameplay.crosshairShape -->
+		<crosshairShape type="string" default="circle" bestPerformance="equal" setting="false" needRestart="false">
+			<name>Форма вспомогательного прицела</name>
+			<description>Устанавливает форму прицела, который виден тогда, когда не виден прицел оружия</description>
+			<options>
+				<option value="circle">Круг</option>
+				<option value="square">Квадрат</option>
+				<option value="cross">Прицел</option>
+				<option value="none">Выключен</option>
+			</options>
+		</crosshairShape>
+		
+		<!-- CFG.gameplay.showNamedAvatars -->
+		<showNamedAvatars type="bool" default="true" bestPerformance="false" setting="true" needRestart="false">
+			<name>Показывать аватарку возле имени игроков</name>
+			<description>Если опция выключена, аватарка не будет отображаться возле имени игрока над головой (только если вы дали игроку имя). Если включена, аватарка будет отображаться всегда</description>
+		</showNamedAvatars>
+		
+		<!-- CFG.gameplay.avatarBrightness -->
+		<avatarBrightness type="float" min="0.5" max="1.0" default="0.9" precision="2" bestPerformance="equal" setting="true" needRestart="false">
+			<name>Яркость аватарок</name>
+			<description>Устанавливает яркость аватарок, отображаемых над головой у игроков</description>
+		</avatarBrightness>
+		
+	</gameplay>
+	
+	<misc name="Разное">
+		<!-- CFG.misc.crosshairTargetRaycastInterval + -->
+		<crosshairTargetRaycastInterval type="int" min="50" max="500" default="150" bestPerformance="more" setting="true" needRestart="false">
+			<name>Интервал обновления действия под прицелом</name>
+			<description>Задает интарвал (в миллисекундах) проверки объектов, на которые указывает прицел. Чем меньше это значение, тем быстрее реакция при выборе объекта взаимодействия с помощью прицела. При больших значениях прицел придется держать немного дольше на объекте взаимодействия, чтобы появилось действие</description>
+		</crosshairTargetRaycastInterval>
+		
+	</misc>
+</configuration>

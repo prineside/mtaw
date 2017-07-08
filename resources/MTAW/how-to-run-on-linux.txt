@@ -1,0 +1,4 @@
+screen -S mtaw-alpha ./mta-server
+CTRL + A + D
+screen -ls
+screen -x *.mtaw-alpha

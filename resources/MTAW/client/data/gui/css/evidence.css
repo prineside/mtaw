@@ -1,0 +1,103 @@
+#evidence {
+	-webkit-user-select: none;
+}
+#evidence-meetings {
+	position:fixed;
+	top:50%;
+	left:50%;
+	width:500px;
+	height:400px;
+	margin-top:-200px;
+	margin-left:-250px;
+	background:#222;
+	box-shadow:0 1px 6px rgba(0,0,0,0.75);
+	z-index:20;
+	display:none;
+}
+#evidence-meetings.visible {
+	display:block;
+}
+#evidence-meetings-filters {
+	height:32px;
+	background:#181818;
+}
+#evidence-meetings-filters input {
+	width:70px;
+	display:block;
+	box-sizing:border-box;
+	float:left;
+	background:#222;
+	border:1px solid #444;
+	margin-left:1px;
+}
+
+#evidence-meetings-list {
+	overflow-y:scroll;
+	height:368px;
+}
+#evidence-meetings-list .meeting {
+	height:32px;
+	color:#fff;
+	font-size:12px;
+	clear:both;
+	overflow:hidden;
+}
+#evidence-meetings-list .meeting:hover {
+	background:#282828;
+}
+#evidence-meetings-list .meeting-avatar {
+	float:left;
+}
+#evidence-meetings-list .meeting-event-count {
+	float:left;
+	width:32px;
+	text-align:center;
+	height:32px;
+	line-height:32px;
+}
+#evidence-meetings-list .meeting-events-by-types {
+	float:left;
+	width:184px;
+	text-align:center;
+	height:32px;
+	line-height:32px;
+}
+#evidence-meetings-list .meeting-events-by-types .event-type {
+	float:left;
+	background:#333;
+	margin-right:5px;
+	height:20px;
+	margin-top:6px;
+	line-height:20px;
+	width:32px;
+	text-align:center;
+	font-size:10px;
+}
+#evidence-meetings-list .meeting-time {
+	float:left;
+	width:128px;
+	text-align:center;
+	height:28px;
+	line-height:13px;
+	margin-top:3px;
+	box-sizing:border-box;
+	font-size:10px;
+}
+#evidence-meetings-list .meeting-time .meeting-time-date {
+	color:#888;
+}
+#evidence-meetings-list .meeting-location {
+	float:left;
+	width:92px;
+	text-align:center;
+	height:32px;
+	line-height:32px;
+	font-size:10px;
+}
+#evidence-meetings-list .meeting-remembered {
+	float:left;
+	width:32px;
+	text-align:center;
+	height:32px;
+	line-height:32px;
+}

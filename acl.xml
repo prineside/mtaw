@@ -1,0 +1,10 @@
+<acl>
+    <group name="Everyone">
+        <acl name="Default"></acl>
+        <object name="user.*"></object>
+        <object name="resource.*" access="true"></object>
+        <object name="general.*" access="true"></object>
+        <object name="command.*" access="true"></object>
+        <object name="function.*" access="true"></object>
+    </group>
+</acl>

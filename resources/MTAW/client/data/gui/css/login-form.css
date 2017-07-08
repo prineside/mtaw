@@ -1,0 +1,92 @@
+#login-form {
+	position:absolute;
+	top:50%;
+	left:50%;
+	width:312px;
+	padding:18px 25px;
+	height:312px;
+	box-sizing:border-box;
+	margin-left:-156px;
+	margin-top:-156px;
+	display:none;
+	color:#fff;
+	box-shadow:0 1px 5px rgba(0,0,0,0.5);
+	background:linear-gradient( rgba(0,0,0,0), rgba(0,0,0,0.1) );
+	-webkit-user-select: none;
+}
+#login-form-logo {
+	background:url( ../img/mtaw-logo.png ) no-repeat top center;
+	height:125px;
+}
+#login-form-sound-toggle {
+	position:absolute;
+	bottom:-32px;
+	left:50%;
+	width:32px;
+	height:32px;
+	text-align:center;
+	line-height:32px;
+	color:rgba(0,0,0,0.5);
+	font-size:14px;
+	margin-left:-16px;
+}
+#login-form-sound-toggle:hover {
+	color:#fff;
+}
+#login-form.visible {
+	display:block;
+}
+.login-form-field-wrap {
+	margin-bottom:18px;
+	height:36px;
+	clear:both;
+}
+.login-form-field-icon {
+	width:36px;
+	height:36px;
+	float:left;
+	background:rgba(0,0,0,0.5);
+}
+.login-form-field-icon i.fa {
+	width:36px;
+	height:36px;
+	line-height:36px;
+	text-align:center;
+	font-size:15px;
+}
+.login-form-field-wrap input {
+	display:block;
+	float:left;
+	font-family:Roboto;
+	font-size:14px;
+	height:36px;
+	padding:0 10px;
+	box-sizing:border-box;
+	width:226px;
+	background:#fff;
+	border:none;
+}
+.login-form-button {
+	width:123px;
+	float:left;
+	display:block;
+	border:none;
+	box-sizing:border-box;
+	height:36px;
+	background:rgba(0,0,0,0.5);
+	font-family:Roboto;
+	font-size:14px;
+	color:#fff;
+}
+#login-form-submit-button {
+	float:left;
+}
+#login-form-registration-button {
+	float:right;
+}
+.login-form-button:hover {
+	background:rgba(0,0,0,0.7);
+}
+.login-form-button:active {
+	box-shadow:inset 0 1px 3px rgba(0,0,0,0.75);
+}

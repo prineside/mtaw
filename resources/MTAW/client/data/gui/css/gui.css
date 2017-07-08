@@ -1,0 +1,98 @@
+#gui {
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	display:none;
+	-webkit-user-select: none;
+}
+#gui.visible {
+	display:block;
+}
+#gui-bars {
+	position:absolute;
+	top:30px;
+	right:30px;
+	width:100px;
+}
+#gui-bars .gui-bar-wrap {
+	background:#000;
+	height:16px;
+	padding:1px;
+	box-sizing:border-box;
+	position:relative;
+}
+#gui-bars .gui-bar-line {
+	background:#fff;
+	height:14px;
+}
+#gui-bars .gui-bar-value {
+	position:absolute;
+	top:0;
+	right:4px;
+	color:#fff;
+	text-shadow:0 1px 0 rgba(0,0,0,0.5);
+	font-size:12px;
+	height:16px;
+	line-height:16px;
+}
+
+#gui-health .gui-bar-line {
+	background:#f00;
+	width:90%;
+}
+#gui-satiety .gui-bar-line {
+	background:#f90;
+	width:90%;
+}
+
+/* GUI dialog */
+#gui-dialog {
+	position:fixed;
+	left:calc( 50% - 125px );
+	width:250px;
+	background:#222;
+	box-shadow:0 1px 4px rgba(0,0,0,0.5), 0 0 0 1px #000, inset 0 0 0 1px #2f2f2f;
+	top:50%;
+	z-index:1000;
+	color:#fff;
+	display:none;
+	font-size:12px;
+	-webkit-user-select: none;
+}
+#gui-dialog-content {
+	padding:5px;
+}
+#gui-dialog-content-icon {
+	font-size:21px;
+	color:#777;
+	float:left;
+	width:40px;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+}
+#gui-dialog-content-message {
+	padding:5px;
+}
+#gui-dialog-content-message.aside-icon {
+	box-sizing:border-box;
+	float:left;
+	width:200px;
+}
+#gui-dialog-content-message.aside-icon:after {
+	content:"";
+	display:block;
+	clear:both;
+}
+#gui-dialog-buttons {
+	clear:both;
+	padding-top:5px;
+	padding-bottom:10px;
+}
+#gui-dialog-buttons:after {
+	display:block;
+	content:"";
+	clear:both;
+}

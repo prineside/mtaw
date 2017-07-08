@@ -1,0 +1,148 @@
+#character-creator {
+	left:50%;
+	margin-left:-480px;
+	z-index:20;
+	display:none;
+	-webkit-user-select: none;
+}
+#character-creator.visible {
+	display:block;
+}
+#character-creator-available-slot-contents {
+	clear:both;
+}
+#character-creator-not-available-slot-contents {
+	color:#FFC107;
+	text-align:center;
+}
+#character-creator-available-slot-contents:after {
+	content:"";
+	clear:both;
+	display:block;
+}
+#character-creator-content {
+	position:relative;
+	padding:0 10px;
+}
+#character-creator-content .label {
+	display:block;
+	padding:10px 0 5px 0;
+	font-size:12px;
+}
+#character-creator-content input.text {
+	display:block;
+	width:100%;
+	padding:5px 10px;
+	background:#181818;
+	box-shadow:inset 0 1px 2px #111, 0 1px 0 #2f2f2f;
+	color:#fff;
+	height:30px;
+	line-height:30px;
+	box-sizing:border-box;
+	border:none;
+}
+#character-creator-content input.text::-webkit-input-placeholder {
+	color:#555;
+}
+#character-creator-skin-selector {
+	display:none;
+}
+.character-creator-skin-button {
+	width:30px;
+}
+#character-creator-skin-name {
+	float:left;
+	height:30px;
+	line-height:30px;
+	width:170px;
+	text-align:center;
+	
+}
+#character-creator-buttons {
+	position:absolute;
+	bottom:10px;
+	left:0;
+	right:0;
+}
+#character-creator-cancel-button {
+	float:left;
+}
+#character-creator-create-button {
+	float:right;
+}
+
+/* Статистика слотов */
+#character-creator-slot-statistic {
+	height:72px;
+	clear:both;
+	margin-top:10px;
+	box-sizing:border-box;
+	padding:10px;
+	font-size:12px;
+}
+#character-creator-slot-statistic-opened-all {
+	padding:10px;
+	font-size:12px;
+	color:#4CAF50;
+	text-align:center;
+}
+#character-creator-slot-statistic-label {
+	margin-bottom:5px;
+	text-align:center;
+}
+#character-creator-slot-statistic-line-wrap {
+	height:5px;
+	margin:0 15px;
+	background:#111;
+	margin-top:22px;
+	position:relative;
+}
+#character-creator-slot-statistic-line {
+	width:33%;
+	background:#0277BD;
+	height:5px;
+	position:relative;
+}
+#character-creator-slot-statistic-line-current-exp {
+	position:absolute;
+	top:-18px;
+	background:#0277BD;
+	width:36px;
+	height:13px;
+	line-height:13px;
+	font-size:10px;
+	text-align:center;
+	margin-right:-18px;
+	right:0;
+	border-radius:2px;
+}
+#character-creator-slot-statistic-line-current-exp:after {
+	content:"";
+	position:absolute;
+	bottom:-5px;
+	left:50%;
+	margin-left:-5px;
+	border-top:5px solid #0277BD;
+	border-left:5px solid transparent;
+	border-right:5px solid transparent;
+}
+#character-creator-slot-statistic-line-prev-exp {
+	position:absolute;
+	bottom:-15px;
+	color:#888;
+	text-align:center;
+	left:0;
+	width:36px;
+	margin-left:-18px;
+	font-size:10px;
+}
+#character-creator-slot-statistic-line-next-exp {
+	position:absolute;
+	bottom:-15px;
+	color:#888;
+	text-align:center;
+	right:0;
+	width:36px;
+	margin-right:-18px;
+	font-size:10px;
+}

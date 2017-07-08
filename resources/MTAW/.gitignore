@@ -1,0 +1,9 @@
+compiled
+compiler/build
+compiler/version
+compiler/compilation-cache.json
+includes/version.lua
+meta.xml
+server/data/debug-bugreports
+inspector/
+inspector.html

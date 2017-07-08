@@ -1,0 +1,4 @@
+<handles>
+	<!-- Main handle -->
+	<handle engine="mysql" name="prineside" host="127.0.0.1" login="root" password="password" database="mtaw"></handle>
+</handles>

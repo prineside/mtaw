@@ -1,0 +1,58 @@
+#popup {
+	position:absolute;
+	bottom:10px;
+	right:10px;
+	width:240px;
+	-webkit-backface-visibility: hidden;
+	-webkit-user-select: none;
+}
+/* Когда лобби открыт */
+body.lobby-visible #popup {
+	bottom:50px;
+	right:auto;
+	left:calc( 50% + 230px );
+	width:250px;
+	perspective:250px;
+}
+.popup-message {
+	position:relative;
+	background:#222;
+	color:#fff;
+	font-size:12px;
+	transition:all 250ms;
+	transform:scale(0,0);
+	overflow:hidden;
+}
+.popup-message.visible {
+	transform:scale(1,1);
+}
+.popup-message table {
+	width:100%;
+	border-spacing:0;
+}
+.popup-message td {
+	padding:0;
+}
+.popup-message td.message-icon {
+	width:28px;
+	font-size:14px;
+	background:#000;
+	text-align:center;
+	text-shadow:0 1px 1px rgba(0,0,0,0.25), -1px 0 1px rgba(0,0,0,0.25), 1px 0 1px rgba(0,0,0,0.25);
+}
+.popup-message td.message-content {
+	padding:6px 10px;
+	line-height:16px;
+}
+.popup-message.success .message-icon {
+	background:#484;
+}
+.popup-message.error .message-icon {
+	background:#c44;
+}
+.popup-message.warning .message-icon {
+	background:#c60;
+}
+.popup-message.info .message-icon {
+	background:#26a;
+}

@@ -1,0 +1,157 @@
+#chat {
+	position:absolute;
+	top:5px;
+	left:5px;
+	width:814px;
+	font-size:12px;
+	color:#fff;
+	text-shadow:1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000, 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+	font-weight:bold;
+	display:none;
+	-webkit-user-select: none;
+}
+#chat.visible {
+	display:block;
+}
+#chat-lines {
+	width:814px;
+	height:190px;
+	overflow-x:hidden;
+	overflow-y:scroll;
+}
+#chat-lines::-webkit-scrollbar {
+	width: 0px;
+}
+#chat-lines::-webkit-scrollbar-track {
+	background:rgba(0,0,0,0.1);
+}
+#chat-lines::-webkit-scrollbar-thumb {
+	background:#fff;
+}
+#chat.scrolled #chat-lines {
+	background:url( ../img/chat-scrolled.png ) no-repeat bottom center;
+}
+#chat-lines div {
+	height:19px;
+	line-height:19px;
+	padding:0 2px;
+	margin:0;
+	margin-top:1px;
+	position:relative;
+	clear:both;
+	overflow:hidden;
+	transition:all 100ms, opacity 300ms;
+	opacity:0.5;
+}
+#chat-lines div.not-new {
+	opacity:1;
+}
+#chat-lines div:after {
+	content:"";
+	display:block;
+	clear:both;
+}
+#chat-lines div i.fa {
+	font-size:14px;
+	width:18px;
+	height:19px;
+	line-height:19px;
+	text-align:center;
+	float:left;
+	margin-right:5px;
+	display:block;
+	
+}
+#chat-lines div .info {
+	width:140px;
+	display:block;
+	float:left;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+	margin-right:10px;
+	box-sizing:border-box;
+	padding-left:2px;
+	background:linear-gradient(270deg, rgba(0,0,0,0.1), rgba(0,0,0,0));
+}
+#chat-lines div .info .description {
+	display:block;
+	font-size:9px;
+}
+#chat-lines div .info .description .time {
+	color:#fff;
+	padding-right:5px;
+}
+#chat-lines div .content {
+	display:block;
+	float:left;
+	width:627px;
+	box-sizing:border-box;
+	padding:0 1px;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+	-webkit-user-select: text;
+}
+#chat-lines div.chat {
+	color:#fff;
+}
+#chat-lines div.warning {
+	color:#fc4;
+}
+#chat-lines div.error {
+	color:#f44;
+}
+#chat-lines div.radio {
+	color:#adf;
+}
+#chat-lines div.info {
+	color:#8df;
+}
+#chat-lines div.broadcast {
+	color:#8f8;
+}
+#chat-lines div.state {
+	color:#aaf;
+}
+#chat-lines div.success {
+	color:#4f4;
+}
+	
+#chat-input {
+	padding-top:5px;
+	display:none;
+}
+#chat-input input {
+	width:100%;
+	box-sizing:border-box;
+	border:none;
+	height:32px;
+	background:rgba(0,0,0,0.5);
+	box-shadow:inset 0 1px 2px rgba(0,0,0,0.5);
+	color:#fff;
+	padding:0 8px;
+}
+#chat-input input:focus {
+	background:rgba(0,0,0,0.8);
+}
+#chat-lines div:hover {
+	background:rgba(0,0,0,0.05);
+}
+#chat-lines div.opened {
+	height:auto;
+	background:rgba(0,0,0,0.2);
+}
+#chat-lines div.opened .info {
+	white-space: normal;
+}
+#chat-lines div.opened .content {
+	white-space: normal;
+}
+
+#chat.active #chat-lines::-webkit-scrollbar {
+	width:10px;
+}
+#chat.active #chat-input {
+	display:block;
+}

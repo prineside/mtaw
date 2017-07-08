@@ -1,0 +1,245 @@
+<meta>
+	<info author="therainycat" name="RolePlay - MTA:W main resource" type="gamemode" version="{version}"></info>
+
+	<oop>true</oop>
+	
+	<min_mta_version client="1.5.1" server="1.5.1" />
+	
+    <include resource="BlurBox" />
+    <include resource="BoneAttach" />
+    <include resource="ShaderTexNames" />
+    <include resource="Freecam" />
+    <include resource="hedit" />
+	
+	<!-- Main -->
+	<script src="includes/version.lua" type="shared"></script>
+	<script src="includes/changelog.lua" type="shared"></script>
+	<script src="includes/struct.lua" type="shared"></script>
+	<script src="includes/lib.lua" type="shared"></script>
+	<script src="includes/arrays.lua" type="shared"></script>
+	<script src="includes/item-class.lua" type="shared"></script>
+	<script src="includes/evidence-type.lua" type="shared"></script>
+	
+	<script src="includes/arrays/bone-arrachment-offsets.lua" type="shared"></script>
+	<script src="includes/arrays/exp-by-level.lua" type="shared"></script>
+	<script src="includes/arrays/herb-classes.lua" type="shared"></script>
+	<script src="includes/arrays/herb-groups.lua" type="shared"></script>
+	<script src="includes/arrays/herb-places.lua" type="shared"></script>
+	<script src="includes/arrays/tree-fruit-offsets.lua" type="shared"></script>
+	<script src="includes/arrays/character-slots-by-total-exp.lua" type="shared"></script>
+	<script src="includes/arrays/character-creator-skins.lua" type="shared"></script>
+	<script src="includes/arrays/gui-key-codes.lua" type="shared"></script>
+	
+	<script src="includes/shaders.lua" type="client"></script>
+	
+	<script src="shared/container.lua" type="shared"></script>
+	<script src="shared/event.lua" type="shared"></script>
+	<script src="shared/item.lua" type="shared"></script>
+	<script src="shared/item-stack.lua" type="shared"></script>
+	
+	<!-- Modules - client -->
+	<script src="client/main.lua" type="client"></script>
+	<script src="client/debug.lua" type="client"></script>
+	<script src="client/shader.lua" type="client"></script>
+	
+	<script src="client/account.lua" type="client"></script>
+	<script src="client/admin.lua" type="client"></script>
+	<script src="client/animation.lua" type="client"></script>
+	<script src="client/avatar.lua" type="client"></script>
+	<script src="client/camera.lua" type="client"></script>
+	<script src="client/callback-event.lua" type="client"></script>
+	<script src="client/character.lua" type="client"></script>
+	<script src="client/character-creator.lua" type="client"></script>
+	<script src="client/chat.lua" type="client"></script>
+	<script src="client/chunk.lua" type="client"></script>
+	<script src="client/control.lua" type="client"></script>
+	<script src="client/command.lua" type="client"></script>
+	<script src="client/configuration.lua" type="client"></script>
+	<script src="client/crosshair.lua" type="client"></script>
+	<script src="client/crosshair-target.lua" type="client"></script>
+	<script src="client/cursor.lua" type="client"></script>
+	<script src="client/delayed-event.lua" type="client"></script>
+	<script src="client/dialog.lua" type="client"></script>
+	<script src="client/dimension.lua" type="client"></script>
+	<script src="client/dyno.lua" type="client"></script>
+	<script src="client/environment.lua" type="client"></script>
+	<script src="client/evidence.lua" type="client"></script>
+	<script src="client/face-memory.lua" type="client"></script>
+	<!--<script src="client/fun-gravity-vehicle.lua" type="client"></script>-->
+	<script src="client/game-gui.lua" type="client"></script>
+	<script src="client/gui.lua" type="client"></script>
+	<script src="client/gui-blur.lua" type="client"></script>
+	<script src="client/herb.lua" type="client"></script>
+	<script src="client/herb-manager.lua" type="client"></script>
+	<script src="client/inventory.lua" type="client"></script>
+	<script src="client/interaction-menu.lua" type="client"></script>
+	<script src="client/item-usage.lua" type="client"></script>
+	<script src="client/live-lobby.lua" type="client"></script>
+	<script src="client/lobby.lua" type="client"></script>
+	<script src="client/local-chat.lua" type="client"></script>
+	<script src="client/login-form.lua" type="client"></script>
+	<script src="client/mapping.lua" type="client"></script>
+	<script src="client/model.lua" type="client"></script>
+	<script src="client/objective.lua" type="client"></script>
+	<script src="client/popup.lua" type="client"></script>
+	<script src="client/profiler.lua" type="client"></script>
+	<script src="client/raycast-target.lua" type="client"></script>
+	<!-- <script src="client/screen-to-uv.lua" type="client"></script> -->
+	<script src="client/settings.lua" type="client"></script>
+	<script src="client/temp-apple-tree.lua" type="client"></script>
+	<script src="client/time.lua" type="client"></script>
+	<script src="client/vehicle-vinyl.lua" type="client"></script>
+	<script src="client/voice.lua" type="client"></script>
+	<script src="client/web-browser.lua" type="client"></script>
+	
+	<!-- Modules - server -->
+	<script src="server/main.lua" type="server"></script>
+	<script src="server/debug.lua" type="server"></script>
+	
+	<script src="server/account.lua" type="server"></script>
+	<script src="server/animation.lua" type="server"></script>
+	<script src="server/avatar.lua" type="server"></script>
+	<script src="server/callback-event.lua" type="server"></script>
+	<script src="server/camera.lua" type="server"></script>
+	<script src="server/chat.lua" type="server"></script>
+	<script src="server/character.lua" type="server"></script>
+	<script src="server/character-creator.lua" type="server"></script>
+	<script src="server/chunk.lua" type="server"></script>
+	<script src="server/command.lua" type="server"></script>
+	<script src="server/db.lua" type="server"></script>
+	<script src="server/dimension.lua" type="server"></script>
+	<script src="server/dyno.lua" type="server"></script>
+	<script src="server/evidence.lua" type="server"></script>
+	<script src="server/herb.lua" type="server"></script>
+	<script src="server/inventory.lua" type="server"></script>
+	<script src="server/item-usage.lua" type="server"></script>
+	<script src="server/lobby.lua" type="server"></script>
+	<script src="server/local-chat.lua" type="server"></script>
+	<script src="server/model.lua" type="server"></script>
+	<script src="server/objective.lua" type="server"></script>
+	<script src="server/playerid.lua" type="server"></script>
+	<script src="server/popup.lua" type="server"></script>
+	<script src="server/profiler.lua" type="server"></script>
+	<script src="server/spawn.lua" type="server"></script>
+	<script src="server/temp-apple-tree.lua" type="server"></script>
+	<script src="server/time.lua" type="server"></script>
+	<script src="server/vehicle-vinyl.lua" type="server"></script>
+	
+	<!-- Files -->
+	<file src="client/data/uv.png" />
+	<file src="client/data/configuration/template.xml" />
+	<file src="client/data/shaders/mta-helper.fx" />
+	<file src="client/data/shaders/settxt.fx" />
+	<file src="client/data/shaders/settxt-noshade.fx" />
+	<file src="client/data/shaders/vinyl.fx" />
+	<file src="client/data/shaders/highlight.fx" />
+	<file src="client/data/shaders/outline-back.fx" />
+	<file src="client/data/shaders/outline-normal-building.fx" />
+	<file src="client/data/shaders/outline-normal-vehicle.fx" />
+	<file src="client/data/shaders/color-building.fx" />
+	<file src="client/data/shaders/color-vehicle.fx" />
+		
+		<!-- Mapping -->
+		<file src="client/data/mapping/lobby.map" />
+		
+		<!-- Avatar -->
+		<file src="client/data/avatar/template.png" />
+		<file src="client/data/avatar/template-small.png" />
+		
+		<!-- Account -->
+		<file src="client/data/account/login-form-background.mp3" />
+		
+		<!-- GUI -->
+		<file src="client/data/gui/index.html" />
+		
+			<!-- CSS -->
+			<file src="client/data/gui/css/style.css" />
+			<file src="client/data/gui/css/main.css" />
+			<file src="client/data/gui/css/jquery-ui.css" />
+			<file src="client/data/gui/css/jquery-ui.structure.css" />
+			<file src="client/data/gui/css/font-awesome.min.css" />
+			<file src="client/data/gui/css/popup.css" />
+			<file src="client/data/gui/css/login-form.css" />
+			<file src="client/data/gui/css/chat.css" />
+			<file src="client/data/gui/css/lobby.css" />
+			<file src="client/data/gui/css/gui.css" />
+			<file src="client/data/gui/css/inventory.css" />
+			<file src="client/data/gui/css/model.css" />
+			<file src="client/data/gui/css/crosshair.css" />
+			<file src="client/data/gui/css/settings.css" />
+			<file src="client/data/gui/css/tooltip.css" />
+			<file src="client/data/gui/css/interaction-menu.css" />
+			<file src="client/data/gui/css/character-creator.css" />
+			<file src="client/data/gui/css/select2.css" />
+			<file src="client/data/gui/css/evidence.css" />
+			
+			<!-- JS - порядок имеет значение -->
+			<file src="client/data/gui/js/jquery.js" />
+			<file src="client/data/gui/js/jquery-ui.min.js" />
+			<file src="client/data/gui/js/jquery.knob.js" />
+			<file src="client/data/gui/js/jquery.extensions.js" />
+			<file src="client/data/gui/js/underscore-min.js" />
+			<file src="client/data/gui/js/gui.js" />
+			<file src="client/data/gui/js/main.js" />
+			<file src="client/data/gui/js/popup.js" />
+			<file src="client/data/gui/js/inventory-slot.js" />
+			<file src="client/data/gui/js/chat.js" />
+			<file src="client/data/gui/js/login-form.js" />
+			<file src="client/data/gui/js/lobby.js" />
+			<file src="client/data/gui/js/inventory.js" />
+			<file src="client/data/gui/js/model.js" />
+			<file src="client/data/gui/js/crosshair.js" />
+			<file src="client/data/gui/js/settings.js" />
+			<file src="client/data/gui/js/objective.js" />
+			<file src="client/data/gui/js/tooltip.js" />
+			<file src="client/data/gui/js/interaction-menu.js" />
+			<file src="client/data/gui/js/character-creator.js" />
+			<file src="client/data/gui/js/buttonset.js" />
+			<file src="client/data/gui/js/select2.min.js" />
+			<file src="client/data/gui/js/evidence.js" />
+			
+			<!-- Img -->
+			<file src="client/data/gui/img/modules-loading-line-wrap.png" />
+			<file src="client/data/gui/img/modules-loading-line.png" />
+			<file src="client/data/gui/img/white.png" />
+			<file src="client/data/gui/img/transparent.png" />
+			<file src="client/data/gui/img/chat-scrolled.png" />
+			<file src="client/data/gui/img/mtaw-logo.png" />
+			<file src="client/data/gui/img/login-form-background.png" />
+			<file src="client/data/gui/img/inventory-grid.png" />
+			<file src="client/data/gui/img/crosshair.png" />
+			<file src="client/data/gui/img/lobby-character-list-avatar-underlay.png" />
+			<file src="client/data/gui/img/lmb-icon.png" />
+			<file src="client/data/gui/img/rmb-icon.png" />
+			
+			<!-- Fonts -->
+			<file src="client/data/gui/fonts/font-awesome.otf" />
+			<file src="client/data/gui/fonts/fontawesome-webfont.eot" />
+			<file src="client/data/gui/fonts/fontawesome-webfont.svg" />
+			<file src="client/data/gui/fonts/fontawesome-webfont.ttf" />
+			<file src="client/data/gui/fonts/fontawesome-webfont.woff" />
+			<file src="client/data/gui/fonts/fontawesome-webfont.woff2" />
+			<file src="client/data/gui/fonts/roboto-mono-regular.ttf" />
+				
+				<!-- Font: roboto -->
+				<file src="client/data/gui/css/font.roboto.css" />
+				<file src="client/data/gui/fonts/roboto/cn.woff2" />
+				<file src="client/data/gui/fonts/roboto/ln.woff2" />
+				<file src="client/data/gui/fonts/roboto/cb.woff2" />
+				<file src="client/data/gui/fonts/roboto/lb.woff2" />
+				<file src="client/data/gui/fonts/roboto/ci.woff2" />
+				<file src="client/data/gui/fonts/roboto/li.woff2" />
+				<!-- End of font: roboto -->
+				
+		<!-- Item -->
+		<file src="client/data/item/icon/wheat.png" />
+		<file src="client/data/item/icon/bread.png" />
+		<file src="client/data/item/icon/apple.png" />
+		<file src="client/data/item/icon/sickle_iron.png" />
+		
+		<!-- Herb -->
+		<file src="client/data/herb/wheat-s.png" />
+		<file src="client/data/herb/wheat-v.png" />
+		<file src="client/data/herb/wheat-y.png" />
+		<file src="client/data/herb/wheat-r.png" />
+</meta>

@@ -1,0 +1,438 @@
+<!DOCTYPE HTML>
+<!-- 
+--  Прежде чем изменять или копировать что-либо, ознакомьтесь с 
+--  файлом youWhereWarned.txt в корневом каталоге клиента MTAW.
+-->
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+		<link rel="stylesheet" href="css/style.css" />
+		<!-- <link rel="stylesheet" href="css/style.min.css" /> -->
+		
+		<!-- JS files -->
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-ui.min.js"></script>
+		<script src="js/jquery.knob.js"></script>
+		<script src="js/jquery.extensions.js"></script>
+		<script src="js/underscore-min.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/popup.js"></script>
+		<script src="js/tooltip.js"></script>
+		<script src="js/buttonset.js"></script>
+		
+		<script src="js/chat.js"></script>
+		<script src="js/evidence.js"></script>
+		<script src="js/login-form.js"></script>
+		<script src="js/lobby.js"></script>
+		<script src="js/gui.js"></script>
+		<script src="js/inventory.js"></script>
+		<script src="js/inventory-slot.js"></script>
+		<script src="js/model.js"></script>
+		<script src="js/crosshair.js"></script>
+		<script src="js/settings.js"></script>
+		<script src="js/objective.js"></script>
+		<script src="js/interaction-menu.js"></script>
+		<script src="js/character-creator.js"></script>
+		<script src="js/select2.min.js"></script>
+		<!-- /JS files -->
+		<!-- <script src="js/script.min.js"></script> -->
+	</head>
+	<body>
+		<!-- Model / Загрузка и замена моделей -->
+		<div id="model">
+			<div id="model-status">Загрузка моделей...</div>
+			<div id="model-progress">
+				<div id="model-progress-line"></div>
+			</div>
+		</div>
+		
+		<!-- GUI / Основной графический интерфейс -->
+		<div id="gui">
+			<!-- Панель баров справа сверху -->
+			<div id="gui-bars">
+				<div id="gui-health" class="gui-bar-wrap"><div class="gui-bar-line"></div><div class="gui-bar-value"></div></div>
+				<div id="gui-satiety" class="gui-bar-wrap"><div class="gui-bar-line"></div><div class="gui-bar-value"></div></div>
+				<div id="gui-money">$0</div>
+			</div>
+		</div>
+		
+		<!-- GUI dialog / Стандартный диалог -->
+		<div id="gui-dialog">
+			<div id="gui-dialog-content">
+				<div id="gui-dialog-content-icon"><i class="fa fa-question"></i></div>
+				<div id="gui-dialog-content-message">Сообщение</div>
+			</div>
+			<div id="gui-dialog-buttons">
+				<div class="button red button-float-left"><i class="fa fa-times"></i>Нет</div>
+				<div class="button green button-float-right"><i class="fa fa-undo"></i>Да</div>
+			</div>
+		</div>
+		
+		<!-- Crosshair / Прицел -->
+		<div id="crosshair">
+			<div id="crosshair-pointer"></div>
+			<div id="crosshair-label" class="action-key-visible">
+				<div id="crosshair-label-action-key">E</div>
+				<div id="crosshair-label-text">
+					<span id="crosshair-label-text-main">Сорвать</span>
+					<span id="crosshair-label-text-progress-overlay"></span>
+				</div>
+				<div id="crosshair-label-description">Яблоко</div>
+			</div>
+		</div>
+		
+		<!-- Tooltip / Подсказка под мышкой для title -->
+		<div id="tooltip"></div>
+		
+		<!-- Interaction Menu / Меню взаимодействия -->
+		<div id="interaction-menu">
+			<div id="interaction-menu-header">
+				<div id="interaction-menu-icon"></div>
+				<div id="interaction-menu-title">Действие</div>
+				<div id="interaction-menu-description">Действительно</div>
+			</div>
+			<div id="interaction-menu-content">
+				<div class="interaction-menu-item">
+					<i class="fa fa-money"></i><span>Передать деньги</span>
+				</div>
+				<div class="interaction-menu-item">
+					<i class="fa fa-ban"></i><span>Сообщить о нарушении</span>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Chat / Чат -->
+		<div id="chat">
+			<div id="chat-lines"></div>
+			<div id="chat-input">
+				<input type="text">
+			</div>
+		</div>
+		
+		<!-- Inv / Все, что связано с вещами и инвентарем -->
+		<div id="inv">
+			<!-- Inv dragging / Подсказка при перетаскивании вещей -->
+			<div id="inv-dragging"></div>
+			
+			<!-- Inv menu / Левая часть инвентаря (меню) -->
+			<div id="inv-menu">
+				<div id="inv-menu-header">
+					<div class="inv-menu-tab-header" title="Персонаж" id="inv-menu-tab-header-character" onClick="Inventory.setMenuTab('character')">
+						<i class="fa fa-user"></i>
+					</div>
+					<div class="inv-menu-tab-header active" title="Цели" id="inv-menu-tab-header-objectives" onClick="Inventory.setMenuTab('objectives')">
+						<i class="fa fa-tasks"></i>
+					</div>
+					<div class="inv-menu-tab-header" title="Список игроков" id="inv-menu-tab-header-player-list" onClick="Inventory.setMenuTab('player-list')">
+						<i class="fa fa-users"></i>
+					</div>
+					<div class="inv-menu-tab-header" title="Меню" id="inv-menu-tab-header-menu" onClick="Inventory.setMenuTab('menu')">
+						<i class="fa fa-bars"></i>
+					</div>
+				</div>
+				<div id="inv-menu-content">
+				
+					<div class="inv-menu-tab" id="inv-menu-tab-character">
+						<div class="inv-block-title">Персонаж</div>
+						<div id="inv-menu-character">Информация о персонаже</div>
+					</div>
+					
+					<div class="inv-menu-tab active" id="inv-menu-tab-objectives">
+						<div class="inv-block-title">Цели</div>
+						<div id="inv-menu-objective-items"></div>
+						<div id="inv-menu-objective-total">
+							<div id="inv-menu-objective-total-level">Уровень: 1</div>
+							<div id="inv-menu-objective-total-exp">1 / 80 xp</div>
+							<div id="inv-menu-objective-total-line-wrap">
+								<div id="inv-menu-objective-total-line"></div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="inv-menu-tab" id="inv-menu-tab-player-list">
+						<div class="inv-block-title">Список игроков</div>
+						<div id="inv-menu-character">Список игроков в сети</div>
+					</div>
+					
+					<div class="inv-menu-tab" id="inv-menu-tab-menu">
+						<div class="inv-block-title">Меню</div>
+						<div id="inv-menu-character">Меню</div>
+					</div>
+					
+				</div>
+			</div>
+			
+			<!-- Inv Wrap / Центральная часть инвентаря -->
+			<div id="inv-wrap">
+				<!-- Inv Inventory / Основной инвентарь -->
+				<div id="inv-inventory" class="inv-block">
+					<div class="inv-block-title" id="inv-inventory-title">Инвентарь</div>
+					
+					<div class="grid">
+					
+					</div>
+				
+					<!-- Inv Weight / Статистика веса инвентаря -->
+					<div id="inv-weight" title="Вес инвентаря">
+						<div id="inv-weight-line-wrap">
+							<div id="inv-weight-line" style="width:30%;"></div>
+						</div>
+						<div id="inv-weight-value">12.7 / 30</div>
+					</div>
+				</div>
+				
+				<!-- Inv Fast / Быстрый доступ -->
+				<div id="inv-fast" class="inv-block">
+					<div class="grid">
+					
+					</div>
+				</div>
+			</div>
+			
+			<!-- Inv Usage Progress / Прогресс-бар использования вещи -->
+			<div id="inv-usage-progress">
+				<input type="text" value="66" id="inv-usage-progress-circle" >
+			</div>
+		</div>
+		
+		<!-- LoginForm / Форма входа -->
+		<div id="login-form">
+			<div id="login-form-sound-toggle" onClick="LoginForm.setSoundEnabled( !LoginForm.soundEnabled )"><i class="fa fa-volume-up"></i></div>
+		
+			<div id="login-form-logo"></div>
+			
+			<div class="login-form-field-wrap">
+				<div class="login-form-field-icon"><i class="fa fa-user"></i></div>
+				<input type="text" id="login-form-input-login" placeholder="Логин">
+			</div>
+			
+			<div class="login-form-field-wrap">
+				<div class="login-form-field-icon"><i class="fa fa-lock"></i></div>
+				<input type="password" id="login-form-input-password" placeholder="Пароль">
+			</div>
+			
+			<button type="button" class="login-form-button" id="login-form-submit-button" onClick="LoginForm.sendForm()">ВХОД</button>
+			<button type="button" class="login-form-button" id="login-form-registration-button" onClick="LoginForm.registrationMode()">РЕГИСТРАЦИЯ</button>
+		</div>
+		
+		<!-- Popup / Всплывающие сообщения -->
+		<div id="popup"></div>
+		
+		<!-- Lobby / Лобби со списком персонажей -->
+		<div id="lobby">
+			<!-- Нижнее меню -->
+			<div id="lobby-menu">
+				<div id="lobby-menu-buttons-left">
+					<div class="lobby-menu-button" id="lobby-menu-settings-button" onClick="Main.sendEvent( 'Settings.toggleVisible' )" title="Настройки">
+						<i class="fa fa-cogs"></i><span>Настройки</span>
+					</div>
+				</div>
+				<div class="button" id="lobby-menu-enter-button" onClick="Lobby.acceptCharacterSelection()">
+					В игру
+				</div>
+				<div id="lobby-menu-buttons-right">
+					<div class="lobby-menu-button" id="lobby-menu-logout-button" onClick="Main.sendEvent( 'Lobby.logOut' )">
+						<i class="fa fa-sign-out"></i><span>Выход</span>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Список персонажей -->
+			<div id="lobby-character-list-wrap" class="lobby-block">
+				<div id="lobby-character-list-title" class="lobby-block-title">Персонажи</div>
+				<div id="lobby-character-list"></div>
+				
+				<div class="button" id="lobby-character-create-button" onClick="Main.sendEvent( 'CharacterCreator.toggle' )">
+					<i class="fa fa-user-plus"></i><span>Новый персонаж</span>
+				</div>
+				
+				<div class="button" id="lobby-character-list-update-button" onClick="Lobby.updateCharacterList()">
+					<i class="fa fa-refresh"></i>
+				</div>
+			</div> 
+			
+			<!-- Информация о персонаже -->
+			<div id="lobby-character-info" class="lobby-block">
+				<div id="lobby-character-info-title" class="lobby-block-title"></div>
+				<div class="info">
+					<div class="title">ID персонажа</div>
+					<div class="value" id="lobby-character-info-value-id"><b>1</b></div>
+				</div>
+				<div class="info">
+					<div class="title">Имя</div>
+					<div class="value" id="lobby-character-info-value-name"><b>Джордж Вашингтон</b></div>
+				</div>
+				<div class="info">
+					<div class="title">Уровень</div>
+					<div class="value" id="lobby-character-info-value-level"><b>17</b> ( 221 / 320 xp )</div>
+				</div>
+				<div class="info">
+					<div class="title">Деньги</div>
+					<div class="value" id="lobby-character-info-value-money"><i class="fa fa-money"></i>1,022<i class="fa fa-university"></i>0</div>
+				</div>
+				<div class="info">
+					<div class="title">Фракция</div>
+					<div class="value" id="lobby-character-info-value-faction">Армия СФ, генерал</div>
+				</div>
+				<div id="lobby-character-info-bars">
+					<div class="bar health" title="Здоровье">
+						<i class="fa fa-plus"></i>
+						<div class="bar-container" id="lobby-character-info-bar-health"><div class="bar-line" style="width:65%;"></div><span>65</span></div>
+					</div>
+					<div class="bar armour" title="Броня">
+						<i class="fa fa-shield"></i>
+						<div class="bar-container" id="lobby-character-info-bar-armor"><div class="bar-line" style="width:15%;"></div><span>15</span></div>
+					</div>
+					<div class="bar satiety" title="Сытость">
+						<i class="fa fa-cutlery"></i>
+						<div class="bar-container" id="lobby-character-info-bar-satiety"><div class="bar-line" style="width:50%;"></div><span>100</span></div>
+					</div>
+					<div class="bar immunity" title="Имунитет">
+						<i class="fa fa-heartbeat"></i>
+						<div class="bar-container" id="lobby-character-info-bar-immunity"><div class="bar-line" style="width:80%;"></div><span>80</span></div>
+					</div>
+					<div class="bar energy" title="Энергия">
+						<i class="fa fa-battery-three-quarters" style="font-size:12px;"></i>
+						<div class="bar-container" id="lobby-character-info-bar-energy"><div class="bar-line" style="width:25%;"></div><span>25</span></div>
+					</div>
+					<div class="bar mood" title="Настроение">
+						<i class="fa fa-smile-o" style="font-size:12px;"></i>
+						<div class="bar-container" id="lobby-character-info-bar-mood"><div class="bar-line" style="width:25%;"></div><span>25</span></div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+			
+		<!-- Settings / Настройки -->
+		<div id="settings">
+			<div id="settings-header">
+				<div id="settings-header-icon"><i class="fa fa-cogs"></i></div>
+				<div id="settings-header-tabs"></div>
+				<div id="settings-header-close" onClick="Main.sendEvent( 'Settings.toggleVisible' )"><i class="fa fa-times"></i></div>
+			</div>
+			<div id="settings-content"></div>
+			<div id="settings-footer">
+				<button class="button red" id="settings-button-cancel"><i class="fa fa-times"></i><span>Отмена</span></button>
+				<button class="button" id="settings-button-defaults"><i class="fa fa-undo"></i><span>По умолчанию</span></button>
+				<button class="button grey" id="settings-button-accept" onClick="Settings.save()"><i class="fa fa-floppy-o"></i><span>Применить</span></button>
+			</div>
+		</div>
+		
+		<!-- Evidence / Сведения -->
+		<div id="evidence">
+			<!-- Таблица со всеми встречами -->
+			<div id="evidence-meetings">
+				<div id="evidence-meetings-filters">
+					<input placeholder="Аватар"></input>
+					<input placeholder="MinX"></input>
+					<input placeholder="MaxX"></input>
+					<input placeholder="MinY"></input>
+					<input placeholder="MaxY"></input>
+					<input placeholder="MinTime"></input>
+					<input placeholder="MaxTime"></input>
+				</div>
+				<div id="evidence-meetings-list">
+					<!-- 
+					<div class="meeting">
+						<div class="meeting-avatar"><img src="../avatar/textures_small/2/46066334.png"></div>
+						<div class="meeting-event-count">212</div>
+						<div class="meeting-events-by-types">
+							<div class="event-type event-type-1">12</div>
+							<div class="event-type event-type-2">28</div>
+							<div class="event-type event-type-3">1</div>
+							<div class="event-type event-type-4">99</div>
+							<div class="event-type event-type-5">1</div>
+						</div>
+						<div class="meeting-time">
+							<div class="meeting-time-ago">16 минут назад</div>
+							<div class="meeting-time-date">2 марта в 17:22</div>
+						</div>
+						<div class="meeting-location">
+							Блуберри
+						</div>
+						<div class="meeting-remembered">
+							<i class="fa fa-check"></i>
+						</div>
+					</div>
+					
+					<div class="meeting">
+						<div class="meeting-avatar"><img src="../avatar/textures_small/2/46066334.png"></div>
+						<div class="meeting-event-count">212</div>
+						<div class="meeting-events-by-types">
+							<div class="event-type event-type-1">12</div>
+							<div class="event-type event-type-2">28</div>
+							<div class="event-type event-type-3">1</div>
+							<div class="event-type event-type-4">99</div>
+							<div class="event-type event-type-5">1</div>
+						</div>
+						<div class="meeting-time">
+							<div class="meeting-time-ago">16 минут назад</div>
+							<div class="meeting-time-date">2 марта в 17:22</div>
+						</div>
+						<div class="meeting-location">
+							Карьер Angel Pine
+						</div>
+						<div class="meeting-remembered">
+							<i class="fa fa-check"></i>
+						</div>
+					</div>
+					
+					-->
+				</div>
+			</div>
+		</div>
+		
+		<!-- Character Creator / Создание персонажа -->
+		<div id="character-creator" class="lobby-block">
+			<div id="character-creator-title" class="lobby-block-title">Новый персонаж</div>
+			<div id="character-creator-content">
+				<div id="character-creator-available-slot-contents">
+					<div class="label">Имя</div>
+					<input type="text" class="text" id="character-creator-name" placeholder="Имя персонажа"></input>
+					
+					<div class="label">Фамилия</div>
+					<input type="text" class="text" id="character-creator-surname" placeholder="Фамилия персонажа"></input>
+					
+					<div class="label">Пол</div>
+					<div class="buttonset" id="character-creator-gender" onClick="CharacterCreator.onGenderSelected()">
+						<button type="button" class="button" value="male"><i class="fa fa-mars"></i>Мужской</button>
+						<button type="button" class="button" value="female"><i class="fa fa-venus"></i>Женский</button>
+					</div>
+					
+					<div id="character-creator-skin-selector">
+						<div class="label">Скин</div>
+						<div class="button button-float-left button-icon-only character-creator-skin-button" onClick="CharacterCreator.setPreviousSkin()"><i class="fa fa-arrow-left"></i></div>
+						<div id="character-creator-skin-name">Рубашка в клетку</div>
+						<div class="button button-float-left button-icon-only character-creator-skin-button" onClick="CharacterCreator.setNextSkin()"><i class="fa fa-arrow-right"></i></div>
+					</div>
+				</div>
+				<div id="character-creator-not-available-slot-contents">
+					Невозможно создать нового персонажа - нет свободных слотов
+				</div>
+			</div>
+			
+			<div id="character-creator-slot-statistic" title="Чтобы получить больше слотов, зарабатывайте опыт на существуюхих персонажах">
+				<div id="character-creator-slot-statistic-label">Использовано слотов: 2 из 8</div>
+				
+				<div id="character-creator-slot-statistic-line-wrap">
+					<div id="character-creator-slot-statistic-line">
+						<div id="character-creator-slot-statistic-line-current-exp">11811</div>
+					</div>
+					<div id="character-creator-slot-statistic-line-prev-exp">0</div>
+					<div id="character-creator-slot-statistic-line-next-exp">13600</div>
+				</div>
+				
+				<div id="character-creator-slot-statistic-opened-all">
+					Вы открыли все слоты, доступные за опыт
+				</div>
+			</div>
+			
+			<div id="character-creator-buttons">
+				<button class="button red" id="character-creator-cancel-button" onClick="Main.sendEvent( 'CharacterCreator.hide' )"><i class="fa fa-times"></i><span>Отмена</span></button>
+				<button class="button green" id="character-creator-create-button" onClick="CharacterCreator.confirmCreation()"><i class="fa fa-check"></i><span>Создать</span></button>
+			</div>
+		</div>
+	</body>
+</html>

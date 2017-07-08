@@ -1,0 +1,44 @@
+#model {
+	position:fixed; 
+	z-index:10; 
+	top:0; 
+	left:calc( 50% - 80px );
+	width:160px; 
+	height:40px; 
+	display:none;
+	background:#222;
+}
+#model::before {
+	content:"";
+	position:absolute;
+	top:0;
+	left:-40px;
+	border-bottom:40px solid transparent;
+	border-right:40px solid #222;
+}
+#model::after {
+	content:"";
+	position:absolute;
+	top:0;
+	right:-40px;
+	border-bottom:40px solid transparent;
+	border-left:40px solid #222;
+}
+#model-status {
+	color:#fff;
+	font-size:12px;
+	text-align:center;
+	padding-top:6px;
+}
+#model-progress {
+	height:5px;
+	background:#000;
+	margin:0 10px;
+	margin-top:5px;
+}
+#model-progress-line {
+	height:5px;
+	background:#4af;
+	width:0%;
+	transition:width 270ms;
+}
