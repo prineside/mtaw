@@ -1,6 +1,22 @@
 # MTA:World
 MTA:World - игровой режим для [Multi Theft Auto](https://mtasa.com/), который планировалось запустить на серверах сети Prineside, и о котором шла речь в [группе VK](https://vk.com/mta_w). Разработка приостановлена, подробности можно прочитать в группе.
 
+[<img src="https://user-images.githubusercontent.com/2880623/27985406-0ff8c1dc-63f3-11e7-8d86-ac0726bb9954.jpg">](https://user-images.githubusercontent.com/2880623/27985391-c664c2b4-63f2-11e7-8c23-bf23460a0f53.jpg)
+[<img src="https://user-images.githubusercontent.com/2880623/27985441-c374dd0e-63f3-11e7-8499-ea21646a602c.jpg">](https://user-images.githubusercontent.com/2880623/27985450-cf93181c-63f3-11e7-9ce4-a1225b796d6c.jpg)
+[<img src="https://user-images.githubusercontent.com/2880623/27985462-ec776f8c-63f3-11e7-8c37-134d0628cb71.jpg">](https://user-images.githubusercontent.com/2880623/27985465-f8224ea6-63f3-11e7-9125-3b805c9d85d4.jpg)
+[<img src="https://user-images.githubusercontent.com/2880623/27985466-02de220c-63f4-11e7-8b63-c96321495338.jpg">](https://user-images.githubusercontent.com/2880623/27985469-0c122332-63f4-11e7-9bee-3abaed21ebaa.jpg)
+[<img src="https://user-images.githubusercontent.com/2880623/27985471-16e61e30-63f4-11e7-8434-66d530a518cb.jpg">](https://user-images.githubusercontent.com/2880623/27985474-205d2b48-63f4-11e7-9e06-56b3efd1157b.jpg)
+[<img src="https://user-images.githubusercontent.com/2880623/27985478-2a7d7f2e-63f4-11e7-8607-5d2b8b1bc276.jpg">](https://user-images.githubusercontent.com/2880623/27985488-3cf90d44-63f4-11e7-9905-39de6737a1d3.jpg)
+[<img src="https://user-images.githubusercontent.com/2880623/27985496-5c971358-63f4-11e7-9d14-32ed396a4d92.jpg">](https://user-images.githubusercontent.com/2880623/27985498-66b95d28-63f4-11e7-88ae-b5b6b491a786.jpg)
+[<img src="https://user-images.githubusercontent.com/2880623/27985504-8c238d90-63f4-11e7-8c04-362055fc3f48.jpg">](https://user-images.githubusercontent.com/2880623/27985507-96604b86-63f4-11e7-8062-dc7c58599116.jpg)
+[<img src="https://user-images.githubusercontent.com/2880623/27985515-c1b007e0-63f4-11e7-812e-47bc383b29f9.jpg">](https://user-images.githubusercontent.com/2880623/27985517-ccca4a0a-63f4-11e7-81ac-5117cc0b9b98.jpg)
+[<img src="https://user-images.githubusercontent.com/2880623/27985520-dc2c50e2-63f4-11e7-8300-e761c725c143.jpg">](https://user-images.githubusercontent.com/2880623/27985523-e5b934cc-63f4-11e7-8736-d7cb73a8d9a1.jpg)
+[<img src="https://user-images.githubusercontent.com/2880623/27985532-0bd79e1e-63f5-11e7-894a-4b246bc62f8c.jpg">](https://user-images.githubusercontent.com/2880623/27985535-1d76346e-63f5-11e7-84e5-b6599d95d8e2.jpg)
+[<img src="https://user-images.githubusercontent.com/2880623/27985538-2bac3a9c-63f5-11e7-8bfb-9d62db278d75.jpg">](https://user-images.githubusercontent.com/2880623/27985541-3c7c0190-63f5-11e7-82b2-dc8aaa5b7d53.jpg)
+[<img src="https://user-images.githubusercontent.com/2880623/27985557-8162f3e0-63f5-11e7-9fec-336bd57298db.jpg">](https://user-images.githubusercontent.com/2880623/27985560-89cd1c9a-63f5-11e7-8ddc-da50f6a1704b.jpg)
+[<img src="https://user-images.githubusercontent.com/2880623/27985579-ee7df8c6-63f5-11e7-8e5c-bb0714789cd2.jpg">](https://user-images.githubusercontent.com/2880623/27985580-f65c200e-63f5-11e7-947f-4304947fb5a5.jpg)
+[<img src="https://user-images.githubusercontent.com/2880623/27985489-48473888-63f4-11e7-8cd6-b0be3f64e0fd.jpg">](https://user-images.githubusercontent.com/2880623/27985492-53325066-63f4-11e7-9968-46dd9bac0a2d.jpg)
+
 ## Установка и запуск
 *Разработка мода производилась на ОС Windows 7, поэтому вспомогательные скрипты и исполняемые файлы, скорее всего, будут работать только на этой ОС. Для разработки на других ОС необходимо поправить пути и зависимости в скриптах, это не должно занять много времени.*
 
