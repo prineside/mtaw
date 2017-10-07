@@ -1,0 +1,12 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\privatecmdrun]
+@="URL:privatecmdrun Protocol"
+"URL Protocol"=""
+
+[HKEY_CLASSES_ROOT\privatecmdrun\shell]
+
+[HKEY_CLASSES_ROOT\privatecmdrun\shell\open]
+
+[HKEY_CLASSES_ROOT\privatecmdrun\shell\open\command]
+@="\"C:\\php\\privatecmdrun.exe\" \"%1\""                           
