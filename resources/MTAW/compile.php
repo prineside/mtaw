@@ -25,6 +25,7 @@
 	
 	if ( RELEASE && !TEST_COMPILE ) {
 		// Проверяем, есть ли что-то в чейнджлоге и есть ли описание обновление
+		/*
 		$changes = file( "changelog" );
 		$noChanges = true;
 		$haveThingsToBeDone = 0;
@@ -61,6 +62,7 @@
 			echo 'Error: no changes description, add them to changelog with starting "?"' . "\r\n";
 			die();
 		}
+		*/
 		
 		// Увеличиваем версию [major.minor.build]
 		if ( !is_file( 'compiler/version' ) ) {
