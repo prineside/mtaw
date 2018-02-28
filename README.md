@@ -38,6 +38,7 @@ MTA:World - игровой режим для [Multi Theft Auto](https://mtasa.co
   - set NODE_PATH=%USERPROFILE%\node_modules
   - npm install clean-css
   - npm install uglify-js
+- Скачайте компилятор для своей ОС [из сайта MTA](https://luac.mtasa.com/api/) и поместите в каталог compiler (должен быть файл compiler/luac.exe или compiler/luac)
 - (опционально) Установите Git 
 - Скопируйте содержимое каталога resources в [Путь установки сервера MTA]/mods/deathmatch/resources
 - Замените файлы [Путь установки сервера MTA]/mods/deathmatch/acl.xml и [Путь установки сервера MTA]/mods/deathmatch/mtaserver.conf файлами из корня репозитория
